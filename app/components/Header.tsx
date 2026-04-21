@@ -5,7 +5,7 @@ export default function Header() {
     <nav className="fixed top-0 left-0 w-full h-20 bg-black/80 backdrop-blur-md z-[100] px-8 md:px-20 flex items-center justify-between border-b border-white/5">
       {/* Left side: Brand */}
       <Link href="/" className="text-xl font-black tracking-tighter uppercase text-white">
-        MATE<span className="text-emerald-400">RIALE</span>
+        Bio<span className="text-emerald-400">Aventrua</span>
       </Link>
 
       {/* Right side: Coordinator Names */}
