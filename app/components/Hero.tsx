@@ -15,18 +15,22 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex flex-col overflow-hidden bg-black text-white group">
-      
-      {/* --- FLASHLIGHT LAYER (ROLLBACK VERSION) --- */}
-      <div 
-        className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(500px circle at ${mousePos.x}px ${mousePos.y - 80}px, 
-            rgba(16, 185, 129, 0.4) 0%, 
-            rgba(16, 185, 129, 0.1) 25%, 
-            rgba(0, 0, 0, 0) 60%)`,
-        }}
-      />
+  /* THE SCROLL FIX: 
+     Changed 'h-screen' to 'min-h-screen' and 'overflow-hidden' to 'overflow-visible' 
+  */
+  <section className="relative min-h-screen w-full flex flex-col overflow-visible bg-black text-white group">
+    
+    {/* --- FLASHLIGHT LAYER (FIXED VERSION) --- */}
+    <div 
+      className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+      style={{
+        /* Removed the -80 so it aligns perfectly with the mouse tip */
+        background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, 
+          rgba(16, 185, 129, 0.29) 0%, 
+          rgba(16, 185, 129, 0.05) 30%, 
+          rgba(0, 0, 0, 0) 70%)`,
+      }}
+    />
 
       {/* Main Content */}
       <div className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 relative z-10 pb-14">
